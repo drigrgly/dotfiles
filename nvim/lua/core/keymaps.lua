@@ -26,6 +26,12 @@ vim.keymap.set("n", "x", '"_x', opts)
 vim.keymap.set("n", "<C-d>", "<C-d>zz", opts)
 vim.keymap.set("n", "<C-u>", "<C-u>zz", opts)
 
+-- Move faster
+vim.keymap.set("n", "<M-j>", "3j", opts)
+vim.keymap.set("n", "<M-k>", "3k", opts)
+vim.keymap.set("n", "<M-h>", "3h", opts)
+vim.keymap.set("n", "<M-l>", "3l", opts)
+
 -- Find and center
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
@@ -37,12 +43,6 @@ vim.keymap.set("i", "jj", "<ESC>", opts)
 vim.api.nvim_set_keymap("n", ":", "<cmd>FineCmdline<CR>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<CR>", "<cmd>FineCmdline<CR>!", { noremap = true })
 
--- Adding auto bracket pairs
--- vim.keymap.set("i", "{", "{}<left>", opts)
--- vim.keymap.set("i", "(", "()<left>", opts)
--- vim.keymap.set("i", "[", "[]<left>", opts)
--- vim.keymap.set("i", "<", "<><left>", opts)
-
 -- Resize with arrows
 vim.keymap.set("n", "<Up>", ":resize -2<CR>", opts)
 vim.keymap.set("n", "<Down>", ":resize +2<CR>", opts)
@@ -52,13 +52,13 @@ vim.keymap.set("n", "<Right>", ":vertical resize +2<CR>", opts)
 -- Buffers
 vim.keymap.set("n", "<Tab>", ":bnext<CR>", opts)
 vim.keymap.set("n", "<S-Tab>", ":bprevious<CR>", opts)
-vim.keymap.set("n", "<leader>x", ":Bdelete!<CR>", opts) -- close buffer
+vim.keymap.set("n", "<leader>x", ":Bdelete!<CR>", opts)   -- close buffer
 vim.keymap.set("n", "<leader>b", "<cmd> enew <CR>", opts) -- new buffer
 
 -- Window management
-vim.keymap.set("n", "<leader>v", "<C-w>v", opts) -- split window vertically
-vim.keymap.set("n", "<leader>h", "<C-w>s", opts) -- split window horizontally
-vim.keymap.set("n", "<leader>se", "<C-w>=", opts) -- make split windows equal width & height
+vim.keymap.set("n", "<leader>v", "<C-w>v", opts)      -- split window vertically
+vim.keymap.set("n", "<leader>h", "<C-w>s", opts)      -- split window horizontally
+vim.keymap.set("n", "<leader>se", "<C-w>=", opts)     -- make split windows equal width & height
 vim.keymap.set("n", "<leader>xs", ":close<CR>", opts) -- close current split window
 
 -- Navigate between splits
@@ -68,10 +68,10 @@ vim.keymap.set("n", "<C-h>", ":wincmd h<CR>", opts)
 vim.keymap.set("n", "<C-l>", ":wincmd l<CR>", opts)
 
 -- Tabs
-vim.keymap.set("n", "<leader>to", ":tabnew<CR>", opts) -- open new tab
+vim.keymap.set("n", "<leader>to", ":tabnew<CR>", opts)   -- open new tab
 vim.keymap.set("n", "<leader>tx", ":tabclose<CR>", opts) -- close current tab
-vim.keymap.set("n", "<leader>tn", ":tabn<CR>", opts) --  go to next tab
-vim.keymap.set("n", "<leader>tp", ":tabp<CR>", opts) --  go to previous tab
+vim.keymap.set("n", "<leader>tn", ":tabn<CR>", opts)     --  go to next tab
+vim.keymap.set("n", "<leader>tp", ":tabp<CR>", opts)     --  go to previous tab
 
 -- Toggle line wrapping
 vim.keymap.set("n", "<leader>lw", "<cmd>set wrap!<CR>", opts)

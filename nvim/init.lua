@@ -26,6 +26,5 @@ require("lazy").setup({
   require("plugins.autoformatting"),
   require("plugins.alpha"),
   require("plugins.autopairs"),
-  -- require("plugins.autotag"),
   require("plugins.fine-cmd"),
 })
