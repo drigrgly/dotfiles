@@ -1,3 +1,4 @@
+" Based on https://github.com/hendrikmi/dotfiles
 " ========================================
 " Options
 " ========================================

@@ -72,10 +72,12 @@ return { -- Autocompletion
       --     completion = cmp.config.window.bordered(),
       --     documentation = cmp.config.window.bordered(),
       -- },
+
       mapping = cmp.mapping.preset.insert({
         ["<C-j>"] = cmp.mapping.select_next_item(),     -- Select the [n]ext item
         ["<C-k>"] = cmp.mapping.select_prev_item(),     -- Select the [p]revious item
-        ["<tab>"] = cmp.mapping.confirm({ select = true }), -- Accept the completion with Enter.
+        ["<CR>"] = cmp.mapping.confirm({ select = true }), -- Accept the completion with Enter.
+        ["<tab>"] = cmp.mapping.confirm({ select = true }), -- Accept the completion with tab.
         ["<C-c>"] = cmp.mapping.complete({}),           -- Manually trigger a completion from nvim-cmp.
 
         -- Think of <c-l> as moving to the right of your snippet expansion.
@@ -98,24 +100,24 @@ return { -- Autocompletion
         end, { "i", "s" }),
 
         -- Select next/previous item with Tab / Shift + Tab
-        ["<Tab>"] = cmp.mapping(function(fallback)
-          if cmp.visible() then
-            cmp.select_next_item()
-          elseif luasnip.expand_or_locally_jumpable() then
-            luasnip.expand_or_jump()
-          else
-            fallback()
-          end
-        end, { "i", "s" }),
-        ["<S-Tab>"] = cmp.mapping(function(fallback)
-          if cmp.visible() then
-            cmp.select_prev_item()
-          elseif luasnip.locally_jumpable(-1) then
-            luasnip.jump(-1)
-          else
-            fallback()
-          end
-        end, { "i", "s" }),
+        -- ["<Tab>"] = cmp.mapping(function(fallback)
+        --   if cmp.visible() then
+        --     cmp.select_next_item()
+        --   elseif luasnip.expand_or_locally_jumpable() then
+        --     luasnip.expand_or_jump()
+        --   else
+        --     fallback()
+        --   end
+        -- end, { "i", "s" }),
+        -- ["<S-Tab>"] = cmp.mapping(function(fallback)
+        --   if cmp.visible() then
+        --     cmp.select_prev_item()
+        --   elseif luasnip.locally_jumpable(-1) then
+        --     luasnip.jump(-1)
+        --   else
+        --     fallback()
+        --   end
+        -- end, { "i", "s" }),
       }),
       sources = {
         { name = "nvim_lsp" },
