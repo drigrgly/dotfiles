@@ -27,10 +27,15 @@ vim.keymap.set("n", "<C-d>", "<C-d>zz", opts)
 vim.keymap.set("n", "<C-u>", "<C-u>zz", opts)
 
 -- Move faster
-vim.keymap.set("n", "<M-j>", "3j", opts)
-vim.keymap.set("n", "<M-k>", "3k", opts)
-vim.keymap.set("n", "<M-h>", "3h", opts)
-vim.keymap.set("n", "<M-l>", "3l", opts)
+vim.keymap.set("n", "<C-j>", "3j", opts)
+vim.keymap.set("n", "<C-k>", "3k", opts)
+vim.keymap.set("n", "<C-h>", "3h", opts)
+vim.keymap.set("n", "<C-l>", "3l", opts)
+
+vim.keymap.set("v", "<C-j>", "3j", opts)
+vim.keymap.set("v", "<C-k>", "3k", opts)
+vim.keymap.set("v", "<C-h>", "3h", opts)
+vim.keymap.set("v", "<C-l>", "3l", opts)
 
 -- Find and center
 vim.keymap.set("n", "n", "nzzzv")
@@ -62,10 +67,10 @@ vim.keymap.set("n", "<leader>se", "<C-w>=", opts)     -- make split windows equa
 vim.keymap.set("n", "<leader>xs", ":close<CR>", opts) -- close current split window
 
 -- Navigate between splits
-vim.keymap.set("n", "<C-k>", ":wincmd k<CR>", opts)
-vim.keymap.set("n", "<C-j>", ":wincmd j<CR>", opts)
-vim.keymap.set("n", "<C-h>", ":wincmd h<CR>", opts)
-vim.keymap.set("n", "<C-l>", ":wincmd l<CR>", opts)
+vim.keymap.set("n", "<M-k>", ":wincmd k<CR>", opts)
+vim.keymap.set("n", "<M-j>", ":wincmd j<CR>", opts)
+vim.keymap.set("n", "<M-h>", ":wincmd h<CR>", opts)
+vim.keymap.set("n", "<M-l>", ":wincmd l<CR>", opts)
 
 -- Tabs
 vim.keymap.set("n", "<leader>to", ":tabnew<CR>", opts)   -- open new tab

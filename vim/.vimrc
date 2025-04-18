@@ -113,10 +113,21 @@ nnoremap <leader>se <C-w>=
 nnoremap <leader>xs :close<CR>
 
 " Navigate between splits
-nnoremap <C-k> :wincmd k<CR>
-nnoremap <C-j> :wincmd j<CR>
-nnoremap <C-h> :wincmd h<CR>
-nnoremap <C-l> :wincmd l<CR>
+nnoremap <M-k> :wincmd k<CR>
+nnoremap <M-j> :wincmd j<CR>
+nnoremap <M-h> :wincmd h<CR>
+nnoremap <M-l> :wincmd l<CR>
+
+" Faster navigations 
+nnoremap <C-k> 3k
+nnoremap <C-j> 3j
+nnoremap <C-h> 3h
+nnoremap <C-l> 3l
+
+vnoremap <C-k> 3k
+vnoremap <C-j> 3j
+vnoremap <C-h> 3h
+vnoremap <C-l> 3l
 
 " tabs
 nnoremap <leader>to :tabnew<CR>
@@ -133,10 +144,11 @@ nnoremap <leader>lw :set wrap!<CR>
 " Press jk fast to exit insert mode
 inoremap jk <ESC>
 inoremap kj <ESC>
+inoremap jj <ESC>
 
 " Stay in indent mode
-" vnoremap < <gv
-" vnoremap > >gv
+vnoremap < <gv
+vnoremap > >gv
 
 " Keep last yanked when pasting
 vnoremap p "_dP
